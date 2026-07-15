@@ -146,14 +146,14 @@
     </footer>
 
     <script>
-        // --- МАСИВ ТОВАРІВ (ТЕПЕР БЕЗ СИНТАКСИЧНИХ ПОМИЛОК) ---
+        // --- МАСИВ ТОВАРІВ З ОНОВЛЕНИМ МОДУЛІНОМ ---
         const products = [
             {
                 id: 1,
                 name: "Набір модуліну для ліплення Fanzilla",
                 category: "Творчість",
-                description: "Яскравій набір модуліну для моделювання та ліплення. У комплекті 36 штук.",
-                price: 180,
+                description: "Яскравій набір модуліну для моделювання та ліплення. У пакеті 36 штук.",
+                price: 120,
                 emoji: "🎨",
                 badgeClass: "text-amber-500 bg-amber-50 border-amber-50",
                 bgClass: "bg-amber-100/60"
@@ -202,7 +202,6 @@
 
         let cart = [];
 
-        // Виведення каталогу на екран
         function renderProducts() {
             const container = document.getElementById('products-container');
             container.innerHTML = products.map(product => `
@@ -327,7 +326,6 @@
             setTimeout(() => { modal.classList.add('hidden'); }, 300);
         }
 
-        // --- ФУНКЦІЯ ВІДПРАВКИ ЗАМОВЛЕННЯ В TELEGRAM ---
         function handleCheckout(event) {
             event.preventDefault();
 
