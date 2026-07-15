@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="uk" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- ТЕГИ ДЛЯ ПОШУКУ В GOOGLE (SEO) -->
-    <title>Sahdsnshop — Магазин дитячих іграшок та модуліну Fanzilla</title>
-    <meta name="description" content="Sahdsnshop (shopstok) — ваш улюблений онлайн-магазин дитячих іграшок! Купити якісний набір модуліну для ліплення Fanzilla, м'які іграшки, конструктори та товари для дитячої творчості за найкращими цінами. Швидка доставка.">
-    <meta name="keywords" content="Sahdsnshop, shopstok, купити модулін fanzilla, дитячі іграшки sahdsnshop, магазин іграшок, модулін для ліплення, набір модуліну 36 штук, ведмедик тедді, конструктори для дітей">
+    <!-- КЛЮЧОВІ СЛОВА ТА ОПИС ДЛЯ ПОШУКУ В GOOGLE (SEO) -->
+    <title>Sahdsnshop — Купити дитячі іграшки та модулін Fanzilla</title>
+    <meta name="description" content="Шукаєте, де купити якісні дитячі іграшки? Заходьте в магазин Sahdsnshop! У нас можна купити оригінальний набір модуліну для ліплення Fanzilla, м'які іграшки, конструктори та інші товари за найкращими цінами з доставкою.">
+    <meta name="keywords" content="купити іграшку, дитячі іграшки купити, магазин дитячих іграшок, купити модулін, модулін fanzilla купити, іграшки для дітей, sahdsnshop, shopstok, купити ведмедика тедді, розвиваючі іграшки">
     <meta name="robots" content="index, follow">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -24,6 +24,7 @@
 </head>
 <body class="bg-[#fafafc] text-gray-700 min-h-screen flex flex-col selection:bg-yellow-200">
 
+    <!-- ШАПКА САЙТУ -->
     <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-40 transition-all border-b border-gray-100">
         <div class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl sm:text-3xl font-black text-sky-500 tracking-tight flex items-center gap-2">
@@ -31,10 +32,11 @@
                 Sahdsnshop
             </a>
             
-            <nav class="hidden md:flex items-center gap-8 font-bold text-gray-600">
-                <a href="#catalog" class="hover:text-sky-500 transition">Каталог</a>
-                <a href="#about" class="hover:text-emerald-500 transition">Про нас</a>
-                <a href="#contacts" class="hover:text-pink-500 transition">Контакти</a>
+            <!-- КНОПКИ НАВІГАЦІЇ -->
+            <nav class="hidden md:flex items-center gap-6 font-bold text-gray-600">
+                <a href="#catalog" class="px-4 py-2 rounded-xl bg-gray-50 hover:bg-sky-50 hover:text-sky-500 transition border border-gray-100 shadow-sm">Каталог</a>
+                <a href="#about" class="px-4 py-2 rounded-xl bg-gray-50 hover:bg-emerald-50 hover:text-emerald-500 transition border border-gray-100 shadow-sm">Про нас</a>
+                <a href="#contacts" class="px-4 py-2 rounded-xl bg-gray-50 hover:bg-pink-50 hover:text-pink-500 transition border border-gray-100 shadow-sm">Контакти</a>
             </nav>
             
             <button onclick="openCart()" class="relative p-3 bg-sky-50 hover:bg-sky-100 text-sky-600 rounded-full transition duration-300 transform active:scale-95 shadow-sm">
@@ -44,6 +46,7 @@
         </div>
     </header>
 
+    <!-- ГОЛОВНИЙ БАНЕР -->
     <section class="relative bg-gradient-to-b from-sky-100 via-pink-50 to-[#fafafc] py-16 sm:py-24 overflow-hidden">
         <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
             <div class="text-center lg:text-left space-y-6">
@@ -70,7 +73,8 @@
         </div>
     </section>
 
-    <main id="catalog" class="container mx-auto px-4 sm:px-6 py-16 flex-grow">
+    <!-- КАТАЛОГ ТОВАРІВ -->
+    <main id="catalog" class="container mx-auto px-4 sm:px-6 py-16 flex-grow scroll-mt-24">
         <div class="text-center max-w-xl mx-auto mb-16">
             <h2 class="text-3xl sm:text-4xl font-black text-gray-800 mb-4">Наш чарівний каталог</h2>
             <p class="text-gray-500 font-medium">Обирайте найкращі подарунки. Додавайте товари у кошик та оформлюйте замовлення в один клік.</p>
@@ -79,6 +83,42 @@
         <div id="products-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"></div>
     </main>
 
+    <!-- СЕКЦІЯ ПРО НАС -->
+    <section id="about" class="bg-emerald-50/60 py-16 border-y border-emerald-100/50 scroll-mt-24">
+        <div class="container mx-auto px-6 max-w-3xl text-center space-y-6">
+            <div class="inline-flex p-4 bg-emerald-100 text-emerald-600 rounded-2xl text-3xl shadow-sm">
+                <i class="fa-solid fa-rocket"></i>
+            </div>
+            <h2 class="text-3xl font-black text-gray-800">Про наш магазин</h2>
+            <p class="text-lg text-gray-600 font-medium leading-relaxed">
+                Вітаємо у <span class="text-sky-500 font-bold">Sahdsnshop</span>! Ми — новий, амбітний магазин дитячих іграшок, який тільки починає свій великий та захоплюючий шлях. Наша головна місія — дарувати щирі посмішки малюкам та допомагати батькам обирати тільки найкращі, безпечні та розвиваючі товари. Дякуємо, що ви з нами на самому старті нашої історії!
+            </p>
+        </div>
+    </section>
+
+    <!-- СЕКЦІЯ КОНТАКТИ -->
+    <section id="contacts" class="bg-white py-16 scroll-mt-24">
+        <div class="container mx-auto px-6 max-w-xl text-center space-y-6">
+            <div class="inline-flex p-4 bg-pink-100 text-pink-500 rounded-2xl text-3xl shadow-sm">
+                <i class="fa-solid fa-address-book"></i>
+            </div>
+            <h2 class="text-3xl font-black text-gray-800">Контакти та інформація</h2>
+            <div class="bg-gray-50 p-6 rounded-3xl border-2 border-dashed border-gray-200 space-y-4">
+                <div>
+                    <span class="block text-xs font-bold text-gray-400 uppercase tracking-wider">Продавець</span>
+                    <p class="text-xl font-black text-gray-800">ФОП Олександр Валентинович</p>
+                </div>
+                <div class="border-t border-gray-200 pt-4">
+                    <span class="block text-xs font-bold text-gray-400 uppercase tracking-wider">Зв'язок з нами</span>
+                    <a href="tel:+380955818182" class="text-2xl font-black text-sky-500 hover:text-sky-600 transition block mt-1 hover:underline">
+                        <i class="fa-solid fa-phone text-lg mr-1"></i> +380 95 581 8182
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- КОШИК (МОДАЛЬНЕ ВІКНО) -->
     <div id="cart-modal" class="fixed inset-0 bg-gray-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4 opacity-0 transition-all duration-300">
         <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl relative max-h-[90vh] flex flex-col overflow-hidden transform scale-95 transition-transform duration-300" id="cart-modal-content">
             
@@ -131,6 +171,7 @@
         </div>
     </div>
 
+    <!-- ВІКНО УСПІШНОГО ЗАМОВЛЕННЯ -->
     <div id="success-modal" class="fixed inset-0 bg-gray-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4 opacity-0 transition-all duration-300">
         <div class="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl text-center transform scale-95 transition-transform duration-300" id="success-modal-content">
             <div class="w-20 h-20 bg-emerald-100 text-emerald-500 rounded-full flex items-center justify-center text-4xl mx-auto mb-6 shadow-inner animate-bounce">
@@ -144,13 +185,15 @@
         </div>
     </div>
 
-    <footer class="bg-gray-900 text-gray-400 py-10 mt-16 border-t border-gray-800">
+    <!-- ПІДВАЛ САЙТУ -->
+    <footer class="bg-gray-900 text-gray-400 py-10 border-t border-gray-800">
         <div class="container mx-auto px-6 text-center space-y-4">
             <p class="text-xl font-black text-white">Sahdsnshop</p>
             <p class="text-sm font-medium text-gray-500">&copy; 2026 Всі права захищені. Найкращий магазин дитячих іграшок.</p>
         </div>
     </footer>
 
+    <!-- СКРИПТИ -->
     <script>
         const products = [
             {
