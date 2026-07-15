@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sahdsnshop — Магазин дитячих іграшок</title>
+    
+    <!-- ТЕГИ ДЛЯ ПОШУКУ В GOOGLE (SEO) -->
+    <title>Sahdsnshop — Магазин дитячих іграшок та модуліну Fanzilla</title>
+    <meta name="description" content="Sahdsnshop (shopstok) — ваш улюблений онлайн-магазин дитячих іграшок! Купити якісний набір модуліну для ліплення Fanzilla, м'які іграшки, конструктори та товари для дитячої творчості за найкращими цінами. Швидка доставка.">
+    <meta name="keywords" content="Sahdsnshop, shopstok, купити модулін fanzilla, дитячі іграшки sahdsnshop, магазин іграшок, модулін для ліплення, набір модуліну 36 штук, ведмедик тедді, конструктори для дітей">
+    <meta name="robots" content="index, follow">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -146,7 +152,6 @@
     </footer>
 
     <script>
-        // --- МАСИВ ТОВАРІВ З ОНОВЛЕНИМ МОДУЛІНОМ ---
         const products = [
             {
                 id: 1,
@@ -154,7 +159,7 @@
                 category: "Творчість",
                 description: "Яскравій набір модуліну для моделювання та ліплення. У пакеті 36 штук.",
                 price: 120,
-                emoji: "fanzilla.jpg", // Сюди підставиться картинка, якщо вона лежить у тій самій папці
+                emoji: "fanzilla.jpg", 
                 badgeClass: "text-amber-500 bg-amber-50 border-amber-50",
                 bgClass: "bg-amber-100/60"
             },
@@ -202,14 +207,11 @@
 
         let cart = [];
 
-        // Виведення каталогу на екран (З підтримкою завантаження локальних картинок)
         function renderProducts() {
             const container = document.getElementById('products-container');
             container.innerHTML = products.map(product => {
-                // Розумна перевірка: чи є в emoji розширення файлу (наприклад, .jpg, .png тощо)
                 const isImage = product.emoji.includes('.');
                 
-                // Якщо це картинка — створюємо тег <img>, інакше — виводимо стандартний смайлик-емодзі
                 const mediaContent = isImage 
                     ? `<img src="${product.emoji}" alt="${product.name}" class="w-full h-full object-contain p-2 rounded-2xl">`
                     : `<span class="text-7xl">${product.emoji}</span>`;
