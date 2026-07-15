@@ -146,20 +146,20 @@
     </footer>
 
     <script>
-        // --- ТУТ ТИ МОЖЕШ МІНЯТИ, ДОДАВАТИ АБО ВИДАЛЯТИ ТОВАРИ ---
-        const products = [{
-    id: 1,
-    name: "Набір модуліну для ліплення Fanzilla",
-    category: "Творчість",
-    description: "Яскравій набір модуліну для моделювання та ліплення. У комплекті 36 штук.",
-    price: 180,
-    emoji: "🎨",
-    badgeClass: "text-amber-500 bg-amber-50 border-amber-50",
-    bgClass: "bg-amber-100/60"
-}
-                          ];
+        // --- МАСИВ ТОВАРІВ (ТЕПЕР БЕЗ СИНТАКСИЧНИХ ПОМИЛОК) ---
+        const products = [
             {
                 id: 1,
+                name: "Набір модуліну для ліплення Fanzilla",
+                category: "Творчість",
+                description: "Яскравій набір модуліну для моделювання та ліплення. У комплекті 36 штук.",
+                price: 180,
+                emoji: "🎨",
+                badgeClass: "text-amber-500 bg-amber-50 border-amber-50",
+                bgClass: "bg-amber-100/60"
+            },
+            {
+                id: 2,
                 name: "Ведмедик Тедді",
                 category: "М'які іграшки",
                 description: "Неймовірно м'який та ніжний плюшевий ведмедик для обіймів.",
@@ -169,7 +169,7 @@
                 bgClass: "bg-pink-100/60"
             },
             {
-                id: 2,
+                id: 3,
                 name: "Еко-Конструктор",
                 category: "Розвиваючі",
                 description: "Дерев'яні кольорові блоки для розвитку логіки та фантазії.",
@@ -179,7 +179,7 @@
                 bgClass: "bg-emerald-100/60"
             },
             {
-                id: 3,
+                id: 4,
                 name: "Музична Залізниця",
                 category: "Транспорт",
                 description: "Потяг зі звуковими та світловими ефектами, що рухається по колії.",
@@ -189,7 +189,7 @@
                 bgClass: "bg-sky-100/60"
             },
             {
-                id: 4,
+                id: 5,
                 name: "Рожевий Єдиноріг",
                 category: "Інтерактивні",
                 description: "Магічний єдиноріг, який вміє співати пісеньки та світити рогом.",
@@ -217,7 +217,7 @@
                     </div>
                     <div class="flex justify-between items-center mt-6">
                         <span class="text-2xl font-black text-gray-800">${product.price} <span class="text-sm font-bold text-gray-400">грн</span></span>
-                        <button onclick="addToCart(${product.id}, '${product.name}', ${product.price})" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold px-4 py-2.5 rounded-full shadow-md shadow-yellow-100 transition duration-300 transform active:scale-95">
+                        <button onclick="addToCart(${product.id}, '${product.name.replace(/'/g, "\\'")}', ${product.price})" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold px-4 py-2.5 rounded-full shadow-md shadow-yellow-100 transition duration-300 transform active:scale-95">
                             В кошик
                         </button>
                     </div>
@@ -345,7 +345,6 @@
                                     `🛒 Товари:\n${itemsText}\n\n` +
                                     `💰 Загальна сума: ${totalText}`;
 
-            // --- НАЛАШТУВАННЯ ТЕЛЕГРАМУ ---
             const botToken = "8649432991:AAEjiToPMkuvsGL8LivplQPtWoH3YEDBw_M"; 
             const chatId = "907048485"; 
 
