@@ -70,8 +70,7 @@
             <p class="text-gray-500 font-medium">Обирайте найкращі подарунки. Додавайте товари у кошик та оформлюйте замовлення в один клік.</p>
         </div>
         
-        <div id="products-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            </div>
+        <div id="products-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"></div>
     </main>
 
     <div id="cart-modal" class="fixed inset-0 bg-gray-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4 opacity-0 transition-all duration-300">
@@ -85,8 +84,7 @@
                 <i class="fa-solid fa-basket-shopping text-yellow-400"></i> Ваш кошик
             </h3>
 
-            <div id="cart-items" class="flex-grow overflow-y-auto space-y-3 pr-1 mb-4 min-h-[100px]">
-                </div>
+            <div id="cart-items" class="flex-grow overflow-y-auto space-y-3 pr-1 mb-4 min-h-[100px]"></div>
 
             <div id="cart-summary" class="border-t border-gray-100 pt-4 mb-4 hidden">
                 <div class="flex justify-between items-center font-black text-lg text-gray-800">
@@ -133,9 +131,7 @@
                 <i class="fa-solid fa-circle-check"></i>
             </div>
             <h3 class="text-2xl font-black text-gray-800 mb-3">Дякуємо за замовлення!</h3>
-            <p id="success-message" class="text-gray-500 font-semibold mb-6 leading-relaxed">
-                Ваше замовлення успішно оформлено!
-            </p>
+            <p id="success-message" class="text-gray-500 font-semibold mb-6 leading-relaxed"></p>
             <button onclick="closeSuccessModal()" class="w-full bg-sky-500 hover:bg-sky-600 text-white font-black py-3 rounded-full shadow-md shadow-sky-100 transition duration-300 transform active:scale-95">
                 Чудово, чекаю!
             </button>
@@ -150,8 +146,7 @@
     </footer>
 
     <script>
-        // --- КАТАЛОГ ТОВАРІВ ---
-        // Сюди ти можеш легко додавати нові товари або змінювати існуючі!
+        // --- ТУТ ТИ МОЖЕШ МІНЯТИ, ДОДАВАТИ АБО ВИДАЛЯТИ ТОВАРИ ---
         const products = [
             {
                 id: 1,
@@ -190,201 +185,4 @@
                 description: "Магічний єдиноріг, який вміє співати пісеньки та світити рогом.",
                 price: 750,
                 emoji: "🦄",
-                badgeClass: "text-amber-500 bg-amber-50 border-amber-50",
-                bgClass: "bg-amber-100/60"
-            }
-        ];
-
-        // Масив для збереження товарів у кошику
-        let cart = [];
-
-        // Функція для відображення товарів з каталогу на сторінці
-        function renderProducts() {
-            const container = document.getElementById('products-container');
-            container.innerHTML = products.map(product => `
-                <div class="bg-white p-5 rounded-3xl shadow-sm border-2 border-gray-50 hover:border-sky-100 hover:shadow-md transition duration-300 flex flex-col justify-between group">
-                    <div>
-                        <div class="${product.bgClass} rounded-2xl h-52 flex items-center justify-center text-7xl mb-5 group-hover:scale-105 transition duration-300 relative overflow-hidden">
-                            ${product.emoji}
-                        </div>
-                        <span class="text-xs font-bold px-2.5 py-1 rounded-md ${product.badgeClass}">${product.category}</span>
-                        <h3 class="text-xl font-black text-gray-800 mt-2 mb-1">${product.name}</h3>
-                        <p class="text-gray-400 text-sm font-medium">${product.description}</p>
-                    </div>
-                    <div class="flex justify-between items-center mt-6">
-                        <span class="text-2xl font-black text-gray-800">${product.price} <span class="text-sm font-bold text-gray-400">грн</span></span>
-                        <button onclick="addToCart(${product.id}, '${product.name}', ${product.price})" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold px-4 py-2.5 rounded-full shadow-md shadow-yellow-100 transition duration-300 transform active:scale-95">
-                            В кошик
-                        </button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // Додавання товару в кошик
-        function addToCart(id, name, price) {
-            const existingItem = cart.find(item => item.id === id);
-            
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({ id, name, price, quantity: 1 });
-            }
-            
-            updateCartUI();
-            animateCartBadge();
-        }
-
-        // Видалення товару або зменшення його кількості
-        function removeFromCart(id) {
-            const itemIndex = cart.findIndex(item => item.id === id);
-            
-            if (itemIndex > -1) {
-                if (cart[itemIndex].quantity > 1) {
-                    cart[itemIndex].quantity -= 1;
-                } else {
-                    cart.splice(itemIndex, 1);
-                }
-            }
-            updateCartUI();
-        }
-
-        // Оновлення інтерфейсу кошика
-        function updateCartUI() {
-            const cartCountBadge = document.getElementById('cart-count');
-            const cartItemsContainer = document.getElementById('cart-items');
-            const cartSummary = document.getElementById('cart-summary');
-            const cartTotal = document.getElementById('cart-total');
-            const orderForm = document.getElementById('order-form');
-
-            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-            
-            if (totalItems > 0) {
-                cartCountBadge.textContent = totalItems;
-                cartCountBadge.classList.remove('scale-0');
-                cartCountBadge.classList.add('scale-100');
-                cartSummary.classList.remove('hidden');
-                orderForm.classList.remove('hidden');
-            } else {
-                cartCountBadge.classList.remove('scale-100');
-                cartCountBadge.classList.add('scale-0');
-                cartSummary.classList.add('hidden');
-                orderForm.classList.add('hidden');
-                cartItemsContainer.innerHTML = `
-                    <div class="text-center py-8 space-y-2">
-                        <span class="text-5xl block">🛒</span>
-                        <p class="text-gray-400 font-bold">Кошик порожній...</p>
-                        <p class="text-xs text-gray-400 font-medium">Додайте щось із каталогу, щоб підняти настрій!</p>
-                    </div>`;
-                return;
-            }
-
-            cartItemsContainer.innerHTML = '';
-            let totalPrice = 0;
-
-            cart.forEach(item => {
-                const itemSum = item.price * item.quantity;
-                totalPrice += itemSum;
-
-                cartItemsContainer.innerHTML += `
-                    <div class="flex justify-between items-center bg-gray-50 p-3.5 rounded-2xl border border-gray-100/50">
-                        <div class="space-y-0.5">
-                            <p class="font-black text-gray-800">${item.name}</p>
-                            <p class="text-xs text-gray-400 font-bold">${item.price} грн × ${item.quantity}</p>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span class="font-extrabold text-sm text-sky-600">${itemSum} грн</span>
-                            <button onclick="removeFromCart(${item.id})" class="text-rose-400 hover:text-rose-600 p-1.5 hover:bg-rose-50 rounded-lg transition">
-                                <i class="fa-solid fa-trash-can"></i>
-                            </button>
-                        </div>
-                    </div>
-                `;
-            });
-
-            cartTotal.textContent = totalPrice + ' грн';
-        }
-
-        // Анімація для лічильника товарів у кошику
-        function animateCartBadge() {
-            const badge = document.getElementById('cart-count');
-            badge.classList.add('scale-125');
-            setTimeout(() => {
-                badge.classList.remove('scale-125');
-            }, 150);
-        }
-
-        // Відкрити кошик
-        function openCart() {
-            const modal = document.getElementById('cart-modal');
-            const content = document.getElementById('cart-modal-content');
-            modal.classList.remove('hidden');
-            setTimeout(() => {
-                modal.classList.remove('opacity-0');
-                content.classList.remove('scale-95');
-            }, 10);
-        }
-
-        // Закрити кошик
-        function closeCart() {
-            const modal = document.getElementById('cart-modal');
-            const content = document.getElementById('cart-modal-content');
-            modal.classList.add('opacity-0');
-            content.classList.add('scale-95');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-            }, 300);
-        }
-
-        // Оформлення замовлення (відправка форми)
-        function handleCheckout(event) {
-            event.preventDefault(); // Запобігаємо перезавантаженню сторінки
-
-            const name = document.getElementById('client-name').value;
-            const phone = document.getElementById('client-phone').value;
-            const delivery = document.getElementById('delivery-method').value;
-
-            // Формуємо текст для успішного вікна
-            const successMessage = `Дякуємо, <strong>${name}</strong>! Ваше замовлення прийнято. Ми зателефонуємо на номер <strong>${phone}</strong> для підтвердження доставки через <strong>${delivery}</strong>.`;
-            document.getElementById('success-message').innerHTML = successMessage;
-
-            // Закриваємо кошик та очищуємо його
-            closeCart();
-            cart = [];
-            updateCartUI();
-            document.getElementById('order-form').reset();
-
-            // Відкриваємо модалку успіху
-            openSuccessModal();
-        }
-
-        // Відкрити вікно успіху
-        function openSuccessModal() {
-            const modal = document.getElementById('success-modal');
-            const content = document.getElementById('success-modal-content');
-            modal.classList.remove('hidden');
-            setTimeout(() => {
-                modal.classList.remove('opacity-0');
-                content.classList.remove('scale-95');
-            }, 10);
-        }
-
-        // Закрити вікно успіху
-        function closeSuccessModal() {
-            const modal = document.getElementById('success-modal');
-            const content = document.getElementById('success-modal-content');
-            modal.classList.add('opacity-0');
-            content.classList.add('scale-95');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-            }, 300);
-        }
-
-        // Запуск генерації каталогу товарів при завантаженні сторінки
-        window.onload = function() {
-            renderProducts();
-            updateCartUI(); // Відобразить, що кошик порожній спочатку
-        };
-    </script>
-</body>
-</html>
+                badgeClass: "text-amber-500 bg-amber-50 border-amber-
