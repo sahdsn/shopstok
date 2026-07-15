@@ -1,4 +1,3 @@
-> Санька:
 <!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -14,10 +13,6 @@
     <style>
         body {
             font-family: 'Nunito', sans-serif;
-        }
-        /* Плавна поява модальних вікон */
-        .modal-active {
-            transition: opacity 0.3s ease-in-out;
         }
     </style>
 </head>
@@ -55,16 +50,14 @@
                 </p>
                 <div class="pt-4">
                     <a href="#catalog" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-black px-8 py-4 rounded-full shadow-lg shadow-yellow-200 hover:shadow-xl hover:-translate-y-0.5 transition duration-300 text-lg">
-                        До каталогу 🧸
+                        До каталогу 
                     </a>
                 </div>
             </div>
             <div class="flex justify-center relative">
                 <div class="w-72 h-72 sm:w-96 sm:h-96 bg-gradient-to-tr from-emerald-200 to-sky-200 rounded-full absolute -z-10 blur-xl opacity-60 animate-pulse"></div>
-
-> Санька:
-<div class="bg-white p-8 rounded-3xl shadow-xl border-4 border-dashed border-sky-200 rotate-2 transform hover:rotate-0 transition duration-500 max-w-sm w-full text-center">
-                    <span class="text-8xl block mb-4">🦄✨🚂</span>
+                <div class="bg-white p-8 rounded-3xl shadow-xl border-4 border-dashed border-sky-200 rotate-2 transform hover:rotate-0 transition duration-500 max-w-sm w-full text-center">
+                    <span class="text-8xl block mb-4">🧸</span>
                     <p class="font-black text-xl text-gray-700">Тут ваші улюблені герої!</p>
                 </div>
             </div>
@@ -77,82 +70,11 @@
             <p class="text-gray-500 font-medium">Обирайте найкращі подарунки. Додавайте товари у кошик та оформлюйте замовлення в один клік.</p>
         </div>
         
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            
-            <div class="bg-white p-5 rounded-3xl shadow-sm border-2 border-pink-50 hover:border-pink-100 hover:shadow-md transition duration-300 flex flex-col justify-between group">
-                <div>
-                    <div class="bg-pink-100/60 rounded-2xl h-52 flex items-center justify-center text-6xl mb-5 group-hover:scale-105 transition duration-300 relative overflow-hidden">
-                        🧸
-                    </div>
-                    <span class="text-xs font-bold text-pink-500 bg-pink-50 px-2.5 py-1 rounded-md">М'які іграшки</span>
-                    <h3 class="text-xl font-black text-gray-800 mt-2 mb-1">Ведмедик Тедді</h3>
-                    <p class="text-gray-400 text-sm font-medium">Неймовірно м'який та ніжний плюшевий ведмедик для обіймів.</p>
-                </div>
-                <div class="flex justify-between items-center mt-6">
-                    <span class="text-2xl font-black text-gray-800">450 <span class="text-sm font-bold text-gray-400">грн</span></span>
-                    <button onclick="addToCart(1, 'Ведмедик Тедді', 450)" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold px-4 py-2.5 rounded-full shadow-md shadow-yellow-100 transition duration-300 transform active:scale-95">
-                        В кошик
-                    </button>
-                </div>
+        <div id="products-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             </div>
-
-            <div class="bg-white p-5 rounded-3xl shadow-sm border-2 border-emerald-50 hover:border-emerald-100 hover:shadow-md transition duration-300 flex flex-col justify-between group">
-                <div>
-                    <div class="bg-emerald-100/60 rounded-2xl h-52 flex items-center justify-center text-6xl mb-5 group-hover:scale-105 transition duration-300 relative overflow-hidden">
-                        🧩
-                    </div>
-                    <span class="text-xs font-bold text-emerald-500 bg-emerald-50 px-2.5 py-1 rounded-md">Розвиваючі</span>
-                    <h3 class="text-xl font-black text-gray-800 mt-2 mb-1">Еко-Конструктор</h3>
-                    <p class="text-gray-400 text-sm font-medium">Дерев'яні кольорові блоки для розвитку логіки та фантазії.</p>
-                </div>
-                <div class="flex justify-between items-center mt-6">
-                    <span class="text-2xl font-black text-gray-800">620 <span class="text-sm font-bold text-gray-400">грн</span></span>
-                    <button onclick="addToCart(2, 'Еко-Конструктор', 620)" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold px-4 py-2.5 rounded-full shadow-md shadow-yellow-100 transition duration-300 transform active:scale-95">
-                        В кошик
-                    </button>
-                </div>
-            </div>
-
-            <div class="bg-white p-5 rounded-3xl shadow-sm border-2 border-sky-50 hover:border-sky-100 hover:shadow-md transition duration-300 flex flex-col justify-between group">
-                <div>
-                    <div class="bg-sky-100/60 rounded-2xl h-52 flex items-center justify-center text-6xl mb-5 group-hover:scale-105 transition duration-300 relative overflow-hidden">
-                        🚂
-
-> Санька:
-</div>
-                    <span class="text-xs font-bold text-sky-500 bg-sky-50 px-2.5 py-1 rounded-md">Транспорт</span>
-                    <h3 class="text-xl font-black text-gray-800 mt-2 mb-1">Музична Залізниця</h3>
-                    <p class="text-gray-400 text-sm font-medium">Потяг зі звуковими та світловими ефектами, що рухається по колії.</p>
-                </div>
-                <div class="flex justify-between items-center mt-6">
-                    <span class="text-2xl font-black text-gray-800">890 <span class="text-sm font-bold text-gray-400">грн</span></span>
-                    <button onclick="addToCart(3, 'Музична Залізниця', 890)" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold px-4 py-2.5 rounded-full shadow-md shadow-yellow-100 transition duration-300 transform active:scale-95">
-                        В кошик
-                    </button>
-                </div>
-            </div>
-
-            <div class="bg-white p-5 rounded-3xl shadow-sm border-2 border-amber-50 hover:border-amber-100 hover:shadow-md transition duration-300 flex flex-col justify-between group">
-                <div>
-                    <div class="bg-amber-100/60 rounded-2xl h-52 flex items-center justify-center text-6xl mb-5 group-hover:scale-105 transition duration-300 relative overflow-hidden">
-                        🦄
-                    </div>
-                    <span class="text-xs font-bold text-amber-500 bg-amber-50 px-2.5 py-1 rounded-md">Інтерактивні</span>
-                    <h3 class="text-xl font-black text-gray-800 mt-2 mb-1">Рожевий Єдиноріг</h3>
-                    <p class="text-gray-400 text-sm font-medium">Магічний єдиноріг, який вміє співати пісеньки та світити рогом.</p>
-                </div>
-                <div class="flex justify-between items-center mt-6">
-                    <span class="text-2xl font-black text-gray-800">750 <span class="text-sm font-bold text-gray-400">грн</span></span>
-                    <button onclick="addToCart(4, 'Рожевий Єдиноріг', 750)" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold px-4 py-2.5 rounded-full shadow-md shadow-yellow-100 transition duration-300 transform active:scale-95">
-                        В кошик
-                    </button>
-                </div>
-            </div>
-
-        </div>
     </main>
 
-    <div id="cart-modal" class="fixed inset-0 bg-gray-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4 opacity-0 transition-opacity duration-300">
+    <div id="cart-modal" class="fixed inset-0 bg-gray-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4 opacity-0 transition-all duration-300">
         <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl relative max-h-[90vh] flex flex-col overflow-hidden transform scale-95 transition-transform duration-300" id="cart-modal-content">
             
             <button onclick="closeCart()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 w-8 h-8 flex items-center justify-center bg-gray-50 rounded-full transition">
@@ -178,9 +100,7 @@
                 
                 <div>
                     <label class="block text-xs font-bold text-gray-400 mb-1">Ваше ім'я та прізвище</label>
-
-> Санька:
-<input type="text" id="client-name" required placeholder="Олена Коваленко" 
+                    <input type="text" id="client-name" required placeholder="Олена Коваленко" 
                            class="w-full border-2 border-gray-100 focus:border-yellow-400 rounded-2xl px-4 py-2.5 font-semibold focus:outline-none transition">
                 </div>
                 
@@ -201,20 +121,21 @@
                 </div>
                 
                 <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-black py-3.5 rounded-full shadow-lg shadow-emerald-100 transition duration-300 mt-4 transform active:scale-95 text-center">
-                    Підтвердити замовлення 👍
+                    Підтвердити замовлення 
                 </button>
             </form>
         </div>
     </div>
 
-    <div id="success-modal" class="fixed inset-0 bg-gray-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4 opacity-0 transition-opacity duration-300">
+    <div id="success-modal" class="fixed inset-0 bg-gray-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4 opacity-0 transition-all duration-300">
         <div class="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl text-center transform scale-95 transition-transform duration-300" id="success-modal-content">
             <div class="w-20 h-20 bg-emerald-100 text-emerald-500 rounded-full flex items-center justify-center text-4xl mx-auto mb-6 shadow-inner animate-bounce">
                 <i class="fa-solid fa-circle-check"></i>
             </div>
             <h3 class="text-2xl font-black text-gray-800 mb-3">Дякуємо за замовлення!</h3>
             <p id="success-message" class="text-gray-500 font-semibold mb-6 leading-relaxed">
-                </p>
+                Ваше замовлення успішно оформлено!
+            </p>
             <button onclick="closeSuccessModal()" class="w-full bg-sky-500 hover:bg-sky-600 text-white font-black py-3 rounded-full shadow-md shadow-sky-100 transition duration-300 transform active:scale-95">
                 Чудово, чекаю!
             </button>
@@ -223,18 +144,85 @@
 
     <footer class="bg-gray-900 text-gray-400 py-10 mt-16 border-t border-gray-800">
         <div class="container mx-auto px-6 text-center space-y-4">
-            <p class="text-xl font-black text-white">Sahdsnshop 🦄</p>
+            <p class="text-xl font-black text-white">Sahdsnshop</p>
             <p class="text-sm font-medium text-gray-500">&copy; 2026 Всі права захищені. Найкращий магазин дитячих іграшок.</p>
         </div>
     </footer>
 
     <script>
+        // --- КАТАЛОГ ТОВАРІВ ---
+        // Сюди ти можеш легко додавати нові товари або змінювати існуючі!
+        const products = [
+            {
+                id: 1,
+                name: "Ведмедик Тедді",
+                category: "М'які іграшки",
+                description: "Неймовірно м'який та ніжний плюшевий ведмедик для обіймів.",
+                price: 450,
+                emoji: "🧸",
+                badgeClass: "text-pink-500 bg-pink-50 border-pink-50",
+                bgClass: "bg-pink-100/60"
+            },
+            {
+                id: 2,
+                name: "Еко-Конструктор",
+                category: "Розвиваючі",
+                description: "Дерев'яні кольорові блоки для розвитку логіки та фантазії.",
+                price: 620,
+                emoji: "🧱",
+                badgeClass: "text-emerald-500 bg-emerald-50 border-emerald-50",
+                bgClass: "bg-emerald-100/60"
+            },
+            {
+                id: 3,
+                name: "Музична Залізниця",
+                category: "Транспорт",
+                description: "Потяг зі звуковими та світловими ефектами, що рухається по колії.",
+                price: 890,
+                emoji: "🚂",
+                badgeClass: "text-sky-500 bg-sky-50 border-sky-50",
+                bgClass: "bg-sky-100/60"
+            },
+            {
+                id: 4,
+                name: "Рожевий Єдиноріг",
+                category: "Інтерактивні",
+                description: "Магічний єдиноріг, який вміє співати пісеньки та світити рогом.",
+                price: 750,
+                emoji: "🦄",
+                badgeClass: "text-amber-500 bg-amber-50 border-amber-50",
+                bgClass: "bg-amber-100/60"
+            }
+        ];
+
         // Масив для збереження товарів у кошику
         let cart = [];
 
+        // Функція для відображення товарів з каталогу на сторінці
+        function renderProducts() {
+            const container = document.getElementById('products-container');
+            container.innerHTML = products.map(product => `
+                <div class="bg-white p-5 rounded-3xl shadow-sm border-2 border-gray-50 hover:border-sky-100 hover:shadow-md transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="${product.bgClass} rounded-2xl h-52 flex items-center justify-center text-7xl mb-5 group-hover:scale-105 transition duration-300 relative overflow-hidden">
+                            ${product.emoji}
+                        </div>
+                        <span class="text-xs font-bold px-2.5 py-1 rounded-md ${product.badgeClass}">${product.category}</span>
+                        <h3 class="text-xl font-black text-gray-800 mt-2 mb-1">${product.name}</h3>
+                        <p class="text-gray-400 text-sm font-medium">${product.description}</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-6">
+                        <span class="text-2xl font-black text-gray-800">${product.price} <span class="text-sm font-bold text-gray-400">грн</span></span>
+                        <button onclick="addToCart(${product.id}, '${product.name}', ${product.price})" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold px-4 py-2.5 rounded-full shadow-md shadow-yellow-100 transition duration-300 transform active:scale-95">
+                            В кошик
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
         // Додавання товару в кошик
         function addToCart(id, name, price) {
-            // Перевіряємо, чи є вже такий товар у кошику
             const existingItem = cart.find(item => item.id === id);
             
             if (existingItem) {
@@ -254,9 +242,7 @@
             if (itemIndex > -1) {
                 if (cart[itemIndex].quantity > 1) {
                     cart[itemIndex].quantity -= 1;
-
-> Санька:
-} else {
+                } else {
                     cart.splice(itemIndex, 1);
                 }
             }
@@ -271,10 +257,8 @@
             const cartTotal = document.getElementById('cart-total');
             const orderForm = document.getElementById('order-form');
 
-            // Рахуємо загальну кількість штук товарів
             const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
             
-            // Керування лічильником у шапці
             if (totalItems > 0) {
                 cartCountBadge.textContent = totalItems;
                 cartCountBadge.classList.remove('scale-0');
@@ -288,14 +272,13 @@
                 orderForm.classList.add('hidden');
                 cartItemsContainer.innerHTML = `
                     <div class="text-center py-8 space-y-2">
-                        <span class="text-5xl block">🥺</span>
+                        <span class="text-5xl block">🛒</span>
                         <p class="text-gray-400 font-bold">Кошик порожній...</p>
                         <p class="text-xs text-gray-400 font-medium">Додайте щось із каталогу, щоб підняти настрій!</p>
                     </div>`;
                 return;
             }
 
-            // Рендеримо додані товари в модалку кошика
             cartItemsContainer.innerHTML = '';
             let totalPrice = 0;
 
@@ -322,7 +305,7 @@
             cartTotal.textContent = totalPrice + ' грн';
         }
 
-        // Легка мікроанімація для червоного індикатора кошика
+        // Анімація для лічильника товарів у кошику
         function animateCartBadge() {
             const badge = document.getElementById('cart-count');
             badge.classList.add('scale-125');
@@ -331,7 +314,7 @@
             }, 150);
         }
 
-        // Відкрити модалку кошика
+        // Відкрити кошик
         function openCart() {
             const modal = document.getElementById('cart-modal');
             const content = document.getElementById('cart-modal-content');
@@ -342,63 +325,66 @@
             }, 10);
         }
 
-        // Закрити модалку кошика
+        // Закрити кошик
         function closeCart() {
             const modal = document.getElementById('cart-modal');
             const content = document.getElementById('cart-modal-content');
             modal.classList.add('opacity-0');
-
-> Санька:
-content.classList.add('scale-95');
+            content.classList.add('scale-95');
             setTimeout(() => {
                 modal.classList.add('hidden');
             }, 300);
         }
 
-        // 6. ОБРОБКА ФОРМИ ЗАМОВЛЕННЯ ТА ІМІТАЦІЯ ВІДПРАВКИ
+        // Оформлення замовлення (відправка форми)
         function handleCheckout(event) {
-            event.preventDefault(); // Зупиняємо перезавантаження сторінки
-            
-            // Отримуємо дані з полів вводу
-            const clientName = document.getElementById('client-name').value;
-            const clientPhone = document.getElementById('client-phone').value;
+            event.preventDefault(); // Запобігаємо перезавантаженню сторінки
+
+            const name = document.getElementById('client-name').value;
+            const phone = document.getElementById('client-phone').value;
             const delivery = document.getElementById('delivery-method').value;
 
-            // Формуємо красивий текст фіналу замовлення
-            const messageText = Дякуємо за замовлення, <strong>${clientName}</strong>! Наш менеджер вже зв'язується з вами за телефоном <span class="text-sky-600 font-bold">${clientPhone}</span> для уточнення деталей доставки через <strong>${delivery}</strong>.;
-            
-            // Закриваємо вікно кошика
+            // Формуємо текст для успішного вікна
+            const successMessage = `Дякуємо, <strong>${name}</strong>! Ваше замовлення прийнято. Ми зателефонуємо на номер <strong>${phone}</strong> для підтвердження доставки через <strong>${delivery}</strong>.`;
+            document.getElementById('success-message').innerHTML = successMessage;
+
+            // Закриваємо кошик та очищуємо його
             closeCart();
-
-            // Показуємо кастомне вікно успіху
-            setTimeout(() => {
-                document.getElementById('success-message').innerHTML = messageText;
-                const successModal = document.getElementById('success-modal');
-                const successContent = document.getElementById('success-modal-content');
-                
-                successModal.classList.remove('hidden');
-                setTimeout(() => {
-                    successModal.classList.remove('opacity-0');
-                    successContent.classList.remove('scale-95');
-                }, 10);
-            }, 350);
-
-            // Повністю очищуємо кошик та скидаємо поля форми для майбутніх покупок
             cart = [];
             updateCartUI();
             document.getElementById('order-form').reset();
+
+            // Відкриваємо модалку успіху
+            openSuccessModal();
+        }
+
+        // Відкрити вікно успіху
+        function openSuccessModal() {
+            const modal = document.getElementById('success-modal');
+            const content = document.getElementById('success-modal-content');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                content.classList.remove('scale-95');
+            }, 10);
         }
 
         // Закрити вікно успіху
         function closeSuccessModal() {
-            const successModal = document.getElementById('success-modal');
-            const successContent = document.getElementById('success-modal-content');
-            successModal.classList.add('opacity-0');
-            successContent.classList.add('scale-95');
+            const modal = document.getElementById('success-modal');
+            const content = document.getElementById('success-modal-content');
+            modal.classList.add('opacity-0');
+            content.classList.add('scale-95');
             setTimeout(() => {
-                successModal.classList.add('hidden');
+                modal.classList.add('hidden');
             }, 300);
         }
+
+        // Запуск генерації каталогу товарів при завантаженні сторінки
+        window.onload = function() {
+            renderProducts();
+            updateCartUI(); // Відобразить, що кошик порожній спочатку
+        };
     </script>
 </body>
 </html>
