@@ -206,8 +206,8 @@
         function renderProducts() {
             const container = document.getElementById('products-container');
             container.innerHTML = products.map(product => {
-                // Перевіряємо, чи це картинка (закінчується на розширення файлу зображення)
-                const isImage = product.emoji.match(/\.(jpg|jpeg|png|webp|gif)$/i);
+                // Розумна перевірка: чи є в emoji розширення файлу (наприклад, .jpg, .png тощо)
+                const isImage = product.emoji.includes('.');
                 
                 // Якщо це картинка — створюємо тег <img>, інакше — виводимо стандартний смайлик-емодзі
                 const mediaContent = isImage 
@@ -337,7 +337,6 @@
             setTimeout(() => { modal.classList.add('hidden'); }, 300);
         }
 
-        // --- ФУНКЦІЯ ВІДПРАВКИ ЗАМОВЛЕННЯ В TELEGRAM ---
         function handleCheckout(event) {
             event.preventDefault();
 
